@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Streaming UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <div class="logo">Musicify</div>
+
+    <nav class="menu">
+      <a href="#" class="active">Home</a>
+      <a href="#">Search</a>
+      <a href="#">Your Library</a>
+      <a href="#">Create Playlist</a>
+      <a href="#">Liked Songs</a>
+    </nav>
+
+    <div class="playlist-box">
+      <h4>Create your first playlist</h4>
+      <p>It's easy — we'll help you build a playlist you'll love.</p>
+      <button>Create Playlist</button>
+    </div>
+  </aside>
+
+  <main class="main">
+
+    <div class="topbar">
+      <div class="nav-buttons">
+        <button class="circle-btn">❮</button>
+        <button class="circle-btn">❯</button>
+      </div>
+
+      <div class="auth-buttons">
+        <a href="#" class="signup">Sign up</a>
+        <button class="login-btn">Log in</button>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h1>Discover Your Next Favorite Song</h1>
+      <p>
+        Stream millions of tracks, discover trending playlists, and enjoy your favorite artists all in one place.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">
+        <h2>Popular Albums</h2>
+        <a href="#">Show all</a>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <img src="https://i1.sndcdn.com/artworks-hLrs1MjvXjhYDPn2-es2JCA-t500x500.jpg" alt="Album">
+          <button class="play-btn">▶</button>
+          <h3>Fe&#33;n</h3>
+          <p>Song by Travis Scott&#8227;2023</p>
+          <audio id="song">
+    <source src="Music/Fien.mp3" type="audio/mpeg">
+  </audio>
+  <script>
+  const playBtn = document.querySelector(".play-btn");
+  const song = document.getElementById("song");
+
+  playBtn.addEventListener("click", () => {
+    if (song.paused) {
+      song.play();
+      playBtn.textContent = "❚❚";
+    } else {
+      song.pause();
+      playBtn.textContent = "▶";
+    }
+  });
+
+  // Reset button when song ends
+  song.addEventListener("ended", () => {
+    playBtn.textContent = "▶";
+  });
+</script>
+
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800" alt="Album">
+          <button class="play-btn">▶</button>
+          <h3>Top Global Hits</h3>
+          <p>The biggest songs trending around the world right now.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=800" alt="Album">
+          <button class="play-btn">▶</button>
+          <h3>Acoustic Mood</h3>
+          <p>Relaxing acoustic tracks to calm your day and boost focus.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=800" alt="Album">
+          <button class="play-btn">▶</button>
+          <h3>Workout Energy</h3>
+          <p>High-energy music to keep your workouts powerful and fun.</p>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1496293455970-f8581aae0e3b?q=80&w=800" alt="Album">
+          <button class="play-btn">▶</button>
+          <h3>Jazz Café</h3>
+          <p>Classic jazz vibes mixed with modern lounge atmosphere.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
