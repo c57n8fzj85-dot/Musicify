@@ -1,5 +1,4 @@
- <style>
-    * {
+   * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -17,17 +16,25 @@
     /* Sidebar */
     .sidebar {
       width: 260px;
-      background: #740c0c;
-      padding: 24px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
+      background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url(wallpaper.png);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
     }
 
     .logo {
-      font-size: 28px;
-      font-weight: 800;
-      color: #050e08;
+  font-size: 28px;
+  font-weight: 800;
+  color: black;
+  text-shadow:
+    2px 2px 2px rgba(221, 216, 216, 0.5);
     }
 
     .menu {
@@ -238,7 +245,66 @@
       opacity: 1;
       transform: translateY(0);
     }
+ /* Lightning overlay */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -120%;
+  left: -50%;
+  width: 200%;
+  height: 300%;
 
+  background: linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255,255,255,0.95) 50%,
+    transparent 80%
+  );
+
+  transform: rotate(25deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Glow effect */
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+
+  box-shadow:
+    0 0 15px rgba(255,255,255,0.3),
+    0 0 30px rgba(255,0,0,0.5),
+    0 0 60px rgba(255,120,0,0.6);
+}
+
+/* Lightning animation */
+.card:hover::before {
+  animation: lightning 0.9s linear;
+}
+
+/* Thunder flash */
+@keyframes lightning {
+  0% {
+    transform: translateX(-150%) rotate(25deg);
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.4;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(150%) rotate(25deg);
+    opacity: 0;
+  }
+}
     /* Player */
     .player {
       position: fixed;
@@ -378,4 +444,3 @@
         justify-content: center;
       }
     }
-  </style>
