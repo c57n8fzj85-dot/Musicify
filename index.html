@@ -15,6 +15,9 @@
 
   <aside class="sidebar">
     <div class="logo">Musicify</div>
+    <video autoplay muted loop playsinline class="sidebar-video">
+    <source src="Chic.mp4" type="video/mp4">
+  </video>
 
     <nav class="menu">
       <a href="#" class="active">Home</a>
@@ -64,39 +67,23 @@
           <img src="https://i1.sndcdn.com/artworks-hLrs1MjvXjhYDPn2-es2JCA-t500x500.jpg" alt="Album">
           <button class="play-btn">▶</button>
           <h3>Fe&#33;n</h3>
-          <p>Song by Travis Scott&#8227;2023</p>
+          <p>Song by Travis Scott &#8227; 2023</p>
           <audio id="song">
-    <source src="Fien.mp3" type="audio/mpeg">
-  </audio>
-  <script>
-  const playBtn = document.querySelector(".play-btn");
-  const song = document.getElementById("song");
-
-  playBtn.addEventListener("click", () => {
-    if (song.paused) {
-      song.play();
-      playBtn.textContent = "❚❚";
-    } else {
-      song.pause();
-      playBtn.textContent = "▶";
-    }
-  });
-
-  // Reset button when song ends
-  song.addEventListener("ended", () => {
-    playBtn.textContent = "▶";
-  });
-</script>
+            <source src="Fien.mp3" type="audio/mpeg">
+          </audio>
 
         </div>
 
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=800" alt="Album">
+          <img src="https://i.pinimg.com/736x/98/28/16/98281638664a188682d7c666eddaf565.jpg" alt="Album">
           <button class="play-btn">▶</button>
-          <h3>Top Global Hits</h3>
-          <p>The biggest songs trending around the world right now.</p>
+          <h3>São Paulo</h3>
+          <p>Song by &#8227; The Weekend
+          </p>
+               <audio id="audio1">
+                <source src="Weekend.mp3" type="audio/mpeg"></audio>
+                <script src="Action.js"></script>
         </div>
-
         <div class="card">
           <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=800" alt="Album">
           <button class="play-btn">▶</button>
@@ -120,7 +107,6 @@
 
       </div>
     </section>
-
   </main>
 </body>
 </html>
